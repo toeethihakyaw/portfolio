@@ -16,10 +16,84 @@
     <link rel="shortcut icon" href="/portfolio/img/Radura Symbol.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="stylesheet" href="/portfolio/css/index.css">
+    <style>
+        #menu:checked+div>label>#open {
+            display: none;
+        }
+
+        #menu:checked+div>label>#close {
+            display: block;
+        }
+
+        label:has(input:checked)>div {
+            color: white;
+        }
+
+        div:has(input:checked)+#list {
+            display: flex;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- menu bar - start  -->
+    <div class="bg-black flex sticky top-0 sm:justify-center">
+        <!-- icon and menu - start  -->
+        <div class="text-white flex basis-full justify-between">
+            <!-- icon - start  -->
+            <div class="w-12 h-12">
+                <div class="w-full h-full text-center content-center text-4xl font-bold">T</div>
+            </div>
+            <!-- icon - end  -->
+            <input type="checkbox" name="menu" id="menu" hidden>
+            <!-- menu - start  -->
+            <div class="w-12 h-12 text-center content-center text-3xl sm:hidden">
+                <label for="menu">
+                    <div id="open">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <div id="close" hidden>
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </label>
+            </div>
+            <!-- menu - end  -->
+        </div>
+        <!-- icon and menu - end  -->
+        <!-- menu list - start  -->
+        <div class="basis-full absolute bg-black/90 backdrop-blur w-full text-gray-400 top-full text-lg h-screen hidden sm:flex sm:w-fit sm:h-fit sm:top-0 sm:relative sm:bg-transparent sm:justify-end"
+            id="list">
+            <div class="sm:flex">
+                <label for="Home">
+                    <input type="radio" name="menu" id="Home" hidden checked>
+                    <div
+                        class="w-fit sm:hover:bg-blue-500 hover:text-white rounded-full p-1 px-4 m-2 transition-colors duration-300">
+                        Home</div>
+                </label>
+                <label for="Skills">
+                    <input type="radio" name="menu" id="Skills" hidden>
+                    <div
+                        class="w-fit sm:hover:bg-blue-500 hover:text-white rounded-full p-1 px-4 m-2 transition-colors duration-300">
+                        Skills</div>
+                </label>
+                <label for="Projects">
+                    <input type="radio" name="menu" id="Projects" hidden>
+                    <div
+                        class="w-fit sm:hover:bg-blue-500 hover:text-white rounded-full p-1 px-4 m-2 transition-colors duration-300">
+                        Projects</div>
+                </label>
+                <label for="Contact">
+                    <input type="radio" name="menu" id="Contact" hidden>
+                    <div
+                        class="w-fit sm:hover:bg-blue-500 hover:text-white rounded-full p-1 px-4 m-2 transition-colors duration-300">
+                        Contact</div>
+                </label>
 
+            </div>
+        </div>
+        <!-- menu list - end  -->
+    </div>
+    <!-- menu bar - end  -->
 </body>
 
 </html>
